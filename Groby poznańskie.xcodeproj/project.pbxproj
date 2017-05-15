@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B4357BF9CD04D8B828A4137 /* Pods_Groby_poznan_skie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B493BB5C07B26DBFF2DE0A /* Pods_Groby_poznan_skie.framework */; };
 		686AE1D11ECA31FE00CE6445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1D01ECA31FE00CE6445 /* AppDelegate.swift */; };
 		686AE1D31ECA31FE00CE6445 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1D21ECA31FE00CE6445 /* ListViewController.swift */; };
 		686AE1D61ECA31FE00CE6445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686AE1D41ECA31FE00CE6445 /* Main.storyboard */; };
 		686AE1D81ECA31FE00CE6445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 686AE1D71ECA31FE00CE6445 /* Assets.xcassets */; };
 		686AE1DB1ECA31FE00CE6445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686AE1D91ECA31FE00CE6445 /* LaunchScreen.storyboard */; };
 		686AE1E31ECA32A500CE6445 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1E21ECA32A500CE6445 /* DetailsViewController.swift */; };
+		686AE1E51ECA372700CE6445 /* Grave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1E41ECA372700CE6445 /* Grave.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28A7A0E1C6CAEC81FD85FF40 /* Pods-Groby poznańskie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Groby poznańskie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Groby poznańskie/Pods-Groby poznańskie.release.xcconfig"; sourceTree = "<group>"; };
+		34B493BB5C07B26DBFF2DE0A /* Pods_Groby_poznan_skie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Groby_poznan_skie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		686AE1CD1ECA31FE00CE6445 /* Groby poznańskie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Groby poznańskie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		686AE1D01ECA31FE00CE6445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		686AE1D21ECA31FE00CE6445 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		686AE1DA1ECA31FE00CE6445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		686AE1DC1ECA31FE00CE6445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		686AE1E21ECA32A500CE6445 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		686AE1E41ECA372700CE6445 /* Grave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grave.swift; sourceTree = "<group>"; };
+		BE4A5F76FD58A38FDDEE7B79 /* Pods-Groby poznańskie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Groby poznańskie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Groby poznańskie/Pods-Groby poznańskie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4357BF9CD04D8B828A4137 /* Pods_Groby_poznan_skie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DDA42CA802F3EAAD93C91A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34B493BB5C07B26DBFF2DE0A /* Pods_Groby_poznan_skie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		308BEEAD836A5C67F280ED11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE4A5F76FD58A38FDDEE7B79 /* Pods-Groby poznańskie.debug.xcconfig */,
+				28A7A0E1C6CAEC81FD85FF40 /* Pods-Groby poznańskie.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		686AE1C41ECA31FE00CE6445 = {
 			isa = PBXGroup;
 			children = (
 				686AE1CF1ECA31FE00CE6445 /* Groby poznańskie */,
 				686AE1CE1ECA31FE00CE6445 /* Products */,
+				308BEEAD836A5C67F280ED11 /* Pods */,
+				1DDA42CA802F3EAAD93C91A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +85,7 @@
 				686AE1D01ECA31FE00CE6445 /* AppDelegate.swift */,
 				686AE1D21ECA31FE00CE6445 /* ListViewController.swift */,
 				686AE1E21ECA32A500CE6445 /* DetailsViewController.swift */,
+				686AE1E41ECA372700CE6445 /* Grave.swift */,
 				686AE1D41ECA31FE00CE6445 /* Main.storyboard */,
 				686AE1D71ECA31FE00CE6445 /* Assets.xcassets */,
 				686AE1D91ECA31FE00CE6445 /* LaunchScreen.storyboard */,
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 686AE1DF1ECA31FE00CE6445 /* Build configuration list for PBXNativeTarget "Groby poznańskie" */;
 			buildPhases = (
+				13C0C592B99576185881D287 /* [CP] Check Pods Manifest.lock */,
 				686AE1C91ECA31FE00CE6445 /* Sources */,
 				686AE1CA1ECA31FE00CE6445 /* Frameworks */,
 				686AE1CB1ECA31FE00CE6445 /* Resources */,
+				047272EE2D7E597221AC450B /* [CP] Embed Pods Frameworks */,
+				7ED7DB4004D01381BE532DFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +165,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		047272EE2D7E597221AC450B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Groby poznańskie/Pods-Groby poznańskie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13C0C592B99576185881D287 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7ED7DB4004D01381BE532DFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Groby poznańskie/Pods-Groby poznańskie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		686AE1C91ECA31FE00CE6445 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,6 +221,7 @@
 				686AE1D31ECA31FE00CE6445 /* ListViewController.swift in Sources */,
 				686AE1D11ECA31FE00CE6445 /* AppDelegate.swift in Sources */,
 				686AE1E31ECA32A500CE6445 /* DetailsViewController.swift in Sources */,
+				686AE1E51ECA372700CE6445 /* Grave.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +340,7 @@
 		};
 		686AE1E01ECA31FE00CE6445 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4A5F76FD58A38FDDEE7B79 /* Pods-Groby poznańskie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W86N8SMSWL;
@@ -274,6 +354,7 @@
 		};
 		686AE1E11ECA31FE00CE6445 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A7A0E1C6CAEC81FD85FF40 /* Pods-Groby poznańskie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W86N8SMSWL;
@@ -304,6 +385,7 @@
 				686AE1E11ECA31FE00CE6445 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
