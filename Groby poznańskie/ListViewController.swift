@@ -34,9 +34,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if isSearching {
+            searchBar.text = ""
+            exitSearchMode()
+        }
         if let row = tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: row, animated: false)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,9 +129,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == nil || searchBar.text == "" {
-            isSearching = false
-            view.endEditing(true)
-            tableView.reloadData()
+            exitSearchMode()
         } else {
             isSearching = true
             filteredGraves = graves.filter({$0.nameAndSurname.contains(searchBar.text!)}    )
@@ -134,5 +137,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    func exitSearchMode() {
+        isSearching = false
+        view.endEditing(true)
+        tableView.reloadData()
+    }
 }
 
