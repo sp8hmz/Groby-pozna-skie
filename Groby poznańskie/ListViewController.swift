@@ -123,7 +123,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" || searchBar.text?.isEmpty == true {
+        if searchBar.text == nil || searchBar.text == "" {
             isSearching = false
             view.endEditing(true)
             tableView.reloadData()
