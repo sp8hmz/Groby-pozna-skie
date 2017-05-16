@@ -35,7 +35,7 @@ class DetailsViewController: UIViewController, MKMapViewDelegate {
                 let dateString = DateFormatter()
                 dateString.dateFormat = "dd.MM.yyyy"
                 birthDate.text = "Ur. \(dateString.string(from: grave.birthDate)) r."
-                deathDate.text = "Zm. \(dateString.string(from: grave.deathDate)) r. (l. \(age)"
+                deathDate.text = "Zm. \(dateString.string(from: grave.deathDate)) r. (l. \(age))"
                 
                 exactLocation.text = "Kwatera \(grave.quarter), rząd \(grave.row), miejsce \(grave.place)"
                 
