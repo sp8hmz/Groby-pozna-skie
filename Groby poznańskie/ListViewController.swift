@@ -132,7 +132,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             exitSearchMode()
         } else {
             isSearching = true
-            filteredGraves = graves.filter({$0.nameAndSurname.contains(searchBar.text!)}    )
+            filteredGraves = graves.filter({$0.nameAndSurname.contains(searchBar.text!)})
             tableView.reloadData()
         }
     }
