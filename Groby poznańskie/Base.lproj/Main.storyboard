@@ -25,9 +25,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k1R-Ae-rNr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="Szukaj..." id="iIA-BN-xSg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wG2-CY-xRV" customClass="ListTableCell" customModule="Groby_poznan_skie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wG2-CY-xRV" id="NgE-s9-Nc5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -61,14 +66,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="k1R-Ae-rNr" firstAttribute="leading" secondItem="xXB-gn-Mqi" secondAttribute="leading" id="5Nx-t8-Bdb"/>
-                            <constraint firstItem="YgP-qZ-PfN" firstAttribute="top" secondItem="k1R-Ae-rNr" secondAttribute="bottom" id="AZg-ao-10P"/>
-                            <constraint firstItem="k1R-Ae-rNr" firstAttribute="top" secondItem="Zh0-D9-g0p" secondAttribute="bottom" constant="-64" id="Sl4-uz-d10"/>
-                            <constraint firstAttribute="trailing" secondItem="k1R-Ae-rNr" secondAttribute="trailing" id="YdD-nP-XjU"/>
+                            <constraint firstItem="k1R-Ae-rNr" firstAttribute="centerY" secondItem="xXB-gn-Mqi" secondAttribute="centerY" id="3jp-PF-3iB"/>
+                            <constraint firstItem="k1R-Ae-rNr" firstAttribute="height" secondItem="xXB-gn-Mqi" secondAttribute="height" id="Z5c-z2-JIn"/>
+                            <constraint firstItem="k1R-Ae-rNr" firstAttribute="width" secondItem="xXB-gn-Mqi" secondAttribute="width" id="da1-06-4do"/>
+                            <constraint firstItem="k1R-Ae-rNr" firstAttribute="centerX" secondItem="xXB-gn-Mqi" secondAttribute="centerX" id="rdN-ma-rtP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Zmarli" id="WZR-my-Jzv"/>
                     <connections>
+                        <outlet property="searchBar" destination="iIA-BN-xSg" id="fS1-Yk-DM8"/>
                         <outlet property="tableView" destination="k1R-Ae-rNr" id="RJe-yS-h8v"/>
                     </connections>
                 </viewController>
