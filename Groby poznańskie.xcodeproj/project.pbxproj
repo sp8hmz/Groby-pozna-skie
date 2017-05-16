@@ -15,6 +15,9 @@
 		686AE1DB1ECA31FE00CE6445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 686AE1D91ECA31FE00CE6445 /* LaunchScreen.storyboard */; };
 		686AE1E31ECA32A500CE6445 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1E21ECA32A500CE6445 /* DetailsViewController.swift */; };
 		686AE1E51ECA372700CE6445 /* Grave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1E41ECA372700CE6445 /* Grave.swift */; };
+		686AE1E71ECA38A200CE6445 /* ListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1E61ECA38A200CE6445 /* ListTableCell.swift */; };
+		686AE1E91ECB11F700CE6445 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686AE1E81ECB11F700CE6445 /* MapKit.framework */; };
+		686AE1EB1ECB13C700CE6445 /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686AE1EA1ECB13C700CE6445 /* MapPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		686AE1DC1ECA31FE00CE6445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		686AE1E21ECA32A500CE6445 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		686AE1E41ECA372700CE6445 /* Grave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grave.swift; sourceTree = "<group>"; };
+		686AE1E61ECA38A200CE6445 /* ListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableCell.swift; sourceTree = "<group>"; };
+		686AE1E81ECB11F700CE6445 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		686AE1EA1ECB13C700CE6445 /* MapPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		BE4A5F76FD58A38FDDEE7B79 /* Pods-Groby poznańskie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Groby poznańskie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Groby poznańskie/Pods-Groby poznańskie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				686AE1E91ECB11F700CE6445 /* MapKit.framework in Frameworks */,
 				4B4357BF9CD04D8B828A4137 /* Pods_Groby_poznan_skie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +54,7 @@
 		1DDA42CA802F3EAAD93C91A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				686AE1E81ECB11F700CE6445 /* MapKit.framework */,
 				34B493BB5C07B26DBFF2DE0A /* Pods_Groby_poznan_skie.framework */,
 			);
 			name = Frameworks;
@@ -84,8 +92,10 @@
 			children = (
 				686AE1D01ECA31FE00CE6445 /* AppDelegate.swift */,
 				686AE1D21ECA31FE00CE6445 /* ListViewController.swift */,
+				686AE1E61ECA38A200CE6445 /* ListTableCell.swift */,
 				686AE1E21ECA32A500CE6445 /* DetailsViewController.swift */,
 				686AE1E41ECA372700CE6445 /* Grave.swift */,
+				686AE1EA1ECB13C700CE6445 /* MapPoint.swift */,
 				686AE1D41ECA31FE00CE6445 /* Main.storyboard */,
 				686AE1D71ECA31FE00CE6445 /* Assets.xcassets */,
 				686AE1D91ECA31FE00CE6445 /* LaunchScreen.storyboard */,
@@ -131,6 +141,11 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = W86N8SMSWL;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -219,9 +234,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				686AE1D31ECA31FE00CE6445 /* ListViewController.swift in Sources */,
+				686AE1E71ECA38A200CE6445 /* ListTableCell.swift in Sources */,
 				686AE1D11ECA31FE00CE6445 /* AppDelegate.swift in Sources */,
 				686AE1E31ECA32A500CE6445 /* DetailsViewController.swift in Sources */,
 				686AE1E51ECA372700CE6445 /* Grave.swift in Sources */,
+				686AE1EB1ECB13C700CE6445 /* MapPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

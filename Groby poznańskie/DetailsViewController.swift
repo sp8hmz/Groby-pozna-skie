@@ -7,17 +7,65 @@
 //
 
 import UIKit
+import MapKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var nameAndSurnameTextLabel: UILabel!
     @IBOutlet weak var birthDate: UILabel!
     @IBOutlet weak var deathDate: UILabel!
-    @IBOutlet weak var cementaryName: UILabel!
+    @IBOutlet weak var exactLocation: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    var grave: Grave? {
+        didSet {
+            self.configureView()
+        }
+    }
+    
+    func configureView() {
+        if let grave = self.grave {
+//            if let nameAndSurname = self.nameAndSurnameTextLabel {
+//                nameAndSurname.text = grave.nameAndSurname
+//            }
+//            if let birthDate = self.birthDate, let deathDate = self.deathDate {
+//                let dateString = DateFormatter()
+//                dateString.dateFormat = "dd.MM.yyyy"
+//                birthDate.text = "Ur. \(dateString.string(from: grave.birthDate)) r."
+//                deathDate.text = "Zm. \(dateString.string(from: grave.deathDate)) r."
+//            }
+//            if let mapView = self.mapView {
+//                mapView.showsScale = true
+//                let point = MapPoint(title: "Grób", coordinate: grave.coordinates)
+//                mapView.addAnnotation(point)
+//                let region = MKCoordinateRegionMakeWithDistance(grave.coordinates, 500, 500)
+//                mapView.setRegion(region, animated: true)
+//            }
+            
+            if let nameAndSurname = self.nameAndSurnameTextLabel, let birthDate = self.birthDate, let deathDate = self.deathDate, let mapView = self.mapView, let exactLocation = self.exactLocation {
+                nameAndSurname.text = grave.nameAndSurname
+                
+                let dateString = DateFormatter()
+                dateString.dateFormat = "dd.MM.yyyy"
+                birthDate.text = "Ur. \(dateString.string(from: grave.birthDate)) r."
+                deathDate.text = "Zm. \(dateString.string(from: grave.deathDate)) r."
+                
+                exactLocation.text = "Kwatera \(grave.quarter), rząd \(grave.row), miejsce \(grave.place)"
+                
+                mapView.showsScale = true
+                let point = MapPoint(title: "Grób", coordinate: grave.coordinates)
+                mapView.addAnnotation(point)
+                let region = MKCoordinateRegionMakeWithDistance(grave.coordinates, 500, 500)
+                mapView.setRegion(region, animated: true)
+            }
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        mapView.delegate = self
+        self.configureView()
         // Do any additional setup after loading the view.
     }
 

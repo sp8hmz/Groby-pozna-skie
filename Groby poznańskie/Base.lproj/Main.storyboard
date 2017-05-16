@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,15 +26,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wG2-CY-xRV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="wG2-CY-xRV" customClass="ListTableCell" customModule="Groby_poznan_skie" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wG2-CY-xRV" id="NgE-s9-Nc5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGQ-Qw-5Zg">
+                                                    <rect key="frame" x="8" y="11" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EGQ-Qw-5Zg" secondAttribute="bottom" constant="3" id="NOc-ia-Ckj"/>
+                                                <constraint firstItem="EGQ-Qw-5Zg" firstAttribute="leading" secondItem="NgE-s9-Nc5" secondAttribute="leadingMargin" id="Nkq-xt-0ej"/>
+                                                <constraint firstItem="EGQ-Qw-5Zg" firstAttribute="trailing" secondItem="NgE-s9-Nc5" secondAttribute="trailingMargin" id="QmR-3M-eYL"/>
+                                                <constraint firstItem="EGQ-Qw-5Zg" firstAttribute="top" secondItem="NgE-s9-Nc5" secondAttribute="topMargin" constant="3" id="fGP-d7-LdJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="YlL-9Q-AaS" kind="showDetail" identifier="showDetails" id="BY2-1l-Jrl"/>
+                                            <outlet property="nameAndSurnameTextLabel" destination="EGQ-Qw-5Zg" id="7KK-qp-k0b"/>
+                                            <segue destination="YlL-9Q-AaS" kind="show" identifier="showDetails" id="iGJ-d9-Arr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -58,9 +74,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kN7-Uc-5DM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1463" y="405"/>
+            <point key="canvasLocation" x="1461.5999999999999" y="404.34782608695656"/>
         </scene>
-        <!--Details View Controller-->
+        <!--Szczegóły-->
         <scene sceneID="IcR-0t-KCy">
             <objects>
                 <viewController id="YlL-9Q-AaS" customClass="DetailsViewController" customModule="Groby_poznan_skie" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,47 +88,72 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Imię i nazwisko" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7J-y0-bsC">
-                                <rect key="frame" x="87" y="80" width="201" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data urodzenia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdQ-zy-hSR">
-                                <rect key="frame" x="87" y="134" width="201" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data śmierci" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-Jx-DbY">
-                                <rect key="frame" x="87" y="171" width="201" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cmentarz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-df-mhP">
-                                <rect key="frame" x="87" y="208" width="201" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="iiL-kO-oBM">
+                                <rect key="frame" x="0.0" y="265" width="375" height="402"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="402" id="w5f-KL-6OI"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="lwG-Od-ijR" id="weT-E2-RYA"/>
+                                </connections>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="JKR-yC-2bs">
+                                <rect key="frame" x="101" y="105" width="172" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Imię i nazwisko" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7J-y0-bsC">
+                                        <rect key="frame" x="8" y="0.0" width="156" height="29.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="afA-v2-XbX">
+                                        <rect key="frame" x="0.0" y="46.5" width="172" height="73.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Data urodzenia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdQ-zy-hSR">
+                                                <rect key="frame" x="28.5" y="0.0" width="115.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Data śmierci" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-Jx-DbY">
+                                                <rect key="frame" x="38.5" y="26.5" width="95" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Kwatera, rząd, miejsce" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fW-Kp-rPs">
+                                                <rect key="frame" x="0.0" y="53" width="172" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iiL-kO-oBM" secondAttribute="trailing" id="TxZ-hG-jJO"/>
+                            <constraint firstItem="JKR-yC-2bs" firstAttribute="centerX" secondItem="iiL-kO-oBM" secondAttribute="centerX" id="bv3-gH-Xfx"/>
+                            <constraint firstItem="iiL-kO-oBM" firstAttribute="top" secondItem="JKR-yC-2bs" secondAttribute="bottom" constant="40" id="fHp-Gb-1Kl"/>
+                            <constraint firstItem="JKR-yC-2bs" firstAttribute="top" secondItem="RsS-tj-GWd" secondAttribute="bottom" constant="41" id="vsF-qP-GFS"/>
+                            <constraint firstItem="iiL-kO-oBM" firstAttribute="leading" secondItem="lwG-Od-ijR" secondAttribute="leading" id="xPb-GX-X2i"/>
+                            <constraint firstItem="iiL-kO-oBM" firstAttribute="bottom" secondItem="7w5-IT-n5B" secondAttribute="top" id="xfX-LP-taP"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Szczegóły" id="Qau-GD-5yu"/>
                     <connections>
                         <outlet property="birthDate" destination="IdQ-zy-hSR" id="3CC-cw-w5N"/>
-                        <outlet property="cementaryName" destination="xnf-df-mhP" id="GsZ-MD-5Tl"/>
                         <outlet property="deathDate" destination="cXr-Jx-DbY" id="rah-cP-Mbv"/>
+                        <outlet property="exactLocation" destination="8fW-Kp-rPs" id="XNH-U9-loA"/>
+                        <outlet property="mapView" destination="iiL-kO-oBM" id="lla-Qp-1TT"/>
                         <outlet property="nameAndSurnameTextLabel" destination="S7J-y0-bsC" id="hnX-PK-5gw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ha-4v-JJr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2304.8000000000002" y="404.34782608695656"/>
+            <point key="canvasLocation" x="2325.5999999999999" y="402.54872563718146"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kQ6-HF-LQJ">
@@ -130,7 +171,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wVI-a1-ozf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624.79999999999995" y="405.24737631184411"/>
+            <point key="canvasLocation" x="658" y="404"/>
         </scene>
     </scenes>
 </document>
